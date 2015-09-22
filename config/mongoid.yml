@@ -5,7 +5,7 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: book_collection_development
+      database: rails_hw1_development
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -76,8 +76,7 @@ development:
 
     # Raise an error when performing a #find and the document is not found.
     # (default: true)
-    # raise_not_found_error: true
-
+    raise_not_found_error: false
     # Raise an error when defining a scope with the same name as an
     # existing method. (default: false)
     # scope_overwrite_exception: false
@@ -90,7 +89,7 @@ development:
 test:
   sessions:
     default:
-      database: book_collection_test
+      database: rails_hw1_test
       hosts:
         - localhost:27017
       options:
