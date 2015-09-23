@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get "signup" => "users#new", :as => "signup"
+  get "signup" => "users#new", :as => "signup"  #this means that  /signup redirects to users controller calling the new method, as is the name of the route
+
+#so this means that we have signup_url and signup_path
+
+
   get 'login' => 'sessions#new'
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy", :as => "logout"
