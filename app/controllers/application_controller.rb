@@ -4,9 +4,6 @@ class ApplicationController < ActionController::Base
   before_filter :require_user
   protect_from_forgery with: :exception
 
-  
-
-
   def current_user
     if @current_user.nil?
       @current_user = User.find(session[:user_id]) if session[:user]
