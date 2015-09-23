@@ -1,9 +1,12 @@
 <%= form_for :session, :url => login_path, :method => :post do |f| %> 	
 
- <p>LOGIN</p><br/>
+
 
   <%= f.label "Email address" %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email %><br/><br/>
+   <%= f.label "Password" %>
+  <%= f.text_field :password %><br/>
+
 
   <div class="actions">
     <br/>
