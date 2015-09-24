@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   skip_before_filter :require_user, :only => [:new, :create]
 
   def new
+    @user = User.new
   end
 
   def create
@@ -14,6 +15,11 @@ class SessionsController < ApplicationController
       render "new"
     end  
   end
+  
+  def login
+    @user = User.login
+  end
+  
 
   def destroy
     #ends the session var
