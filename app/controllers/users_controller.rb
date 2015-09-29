@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy] #before a user is created we don't want to show edit update destr
+  skip_before_filter :require_user, :only => [:create, :new]
   
   # GET /users
   # GET /users.json

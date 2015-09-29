@@ -9,15 +9,19 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email_address])
     if user
+      puts "successful login"
       session[:user_id] = user.id
       redirect_to users_path
     else
+      flash[:notice] = "Unsuccessful Login"
+      puts "unsuccessful login"
       render "new"
     end  
   end
   
   def login
     @user = User.login
+    redirect_to users_path
   end
   
 
