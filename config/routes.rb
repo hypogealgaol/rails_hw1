@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
   resources :users
 
+
+  get 'welcome/index'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy", :as => "logout"
-  get 'userpage' => "users#show", :as => "userpage"
 
   #root of the site
   root 'welcome#index'

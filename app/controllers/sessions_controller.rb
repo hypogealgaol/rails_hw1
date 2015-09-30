@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       session[:user_email] = user.email
       redirect_to users_path
     else
-      flash[:alert] = "Unsuccessful login"
+      flash[:notice] = "Unsuccessful login"
       puts "unsuccessful login" #testing
       render "new" #renders a different template within the same controller
     end  
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
     #ends the session var
     session[:user_id] = nil
     redirect_to root_url
-    flash[:alert] = "You just logged out"
+    flash[:notice] = "You just logged out"
   end
 
 end
