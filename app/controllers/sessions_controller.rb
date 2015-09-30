@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     if user
       puts "userfound: successful login" #testing
       session[:user_id] = user.id
+      session[:user_email] = user.email
       redirect_to users_path
     else
       flash[:alert] = "Unsuccessful login"

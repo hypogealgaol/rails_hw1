@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy", :as => "logout"
+  get 'userpage' => "users#show", :as => "userpage"
 
   #root of the site
   root 'welcome#index'
