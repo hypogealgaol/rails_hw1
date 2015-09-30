@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     puts "tried to find user"
     if user
-      puts "successful login" #testing
+      puts "userfound: successful login" #testing
       session[:user_id] = user.id
       redirect_to users_path
     else
